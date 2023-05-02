@@ -36,6 +36,16 @@ p {
 }
 
 
+.visibility-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 
 /* ...........................................................header */
 .header-conteiner {
@@ -43,6 +53,7 @@ p {
     width: 1158px;
     margin: 0 auto;
     padding: 0 15px 0 15px;
+
 }
 
 
@@ -98,12 +109,14 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 408px;
+    /* width: 408px; */
+    width: 428px;
     height: 576px;
     background-color: var(--modal-background-color);
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
 }
 
 .modal-close-btn {
@@ -143,6 +156,179 @@ p {
     visibility: hidden;
     pointer-events: none;
 }
+
+/* .........................................................modal-form */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-logo {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+
+}
+
+.modal-form-input {
+    width: 100%;
+    height: 40px;
+    transition: border color var(--transition-dur-and-func);
+    border-radius: 4px;
+    padding-left: 38px;
+
+}
+
+.modal-form-input-wrapper {
+    display: block;
+    position: relative;
+}
+
+.modal-form-input-desc {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
+
+.modal-form-check-desc {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+    margin-bottom: 24px;
+
+
+}
+
+.modal-form-field {
+    margin-bottom: 8px;
+}
+
+.modal-form-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+    display: block;
+    width: 18px;
+    height: 18px;
+    transition: fill var(--transition-dur-and-func);
+}
+
+
+
+.modal-form-input:focus {
+    outline: none;
+    border-color: var(--thre-background-color);
+
+}
+
+.modal-form-input:focus+.modal-form-input-icon {
+    fill: var(--thre-background-color);
+}
+
+.modal-form-massage {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    resize: none;
+    padding: 8px 16px;
+    transition: border-color var(--transition-dur-and-func);
+
+
+}
+
+.modal-form-massage::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+
+}
+
+.modal-form-massage:focus {
+    outline: none;
+    border-color: var(--thre-background-color);
+}
+
+.modal-form-check-desc::before {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #404bbf;
+    content: "";
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.modal-form-check:checked+.modal-form-check-desc::before {
+    background-color: var(--thre-background-color);
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255);
+    /* background-image: url("Встаивти SVG Яку я поставлю в images не до спрайту!" "); */
+
+}
+
+.modal-form-check:focus+.modal-form-check-desc::before {
+    outline: 2px solid #404BBF;
+    /* background-image: url("Встаивти SVG Яку я поставлю в images не до спрайту!" "); */
+
+}
+
+.modal-form-submit {
+    min-width: 169px;
+    height: 56px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: var(--main-color);
+    border: none;
+    background-color: var(--thre-background-color);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--thre-background-color);
+    margin: 0 auto;
+    /* margin-top: 48px; */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
+}
+
+.modal-form-submit:focus,
+.modal-form-submit:hover {
+
+    background-color: #404BBF;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -722,6 +908,98 @@ p {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/* ...................................................footer-form */
+.footer-form-input-desc {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: var(--main-color);
+    margin-bottom: 16px;
+}
+
+
+.footer-form {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 80px;
+    gap: 24px;
+
+}
+
+.footer-form-input {
+    width: 264px;
+    height: 40px;
+    padding-left: 16px;
+    background-color: var(--logo-color);
+    border: 1px solid var(--main-color);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    color: var(--main-color);
+
+
+
+}
+
+.footer-form-input::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: var(--main-color);
+}
+
+.footer-form-submit {
+    position: relative;
+    min-width: 165px;
+    height: 40px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 24px;
+    letter-spacing: 0.04em;
+    color: var(--main-color);
+    border: none;
+    background-color: var(--thre-background-color);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--thre-background-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 40px;
+
+
+
+
+}
+
+.footer-form-submit:focus,
+.footer-form-submit:hover {
+
+    background-color: var(--second-background-color);
+}
+
+.footer-form-subscribe-icon {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translate(0, -50%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: fill var(--transition-dur-and-func);
+
+
+}
+
 
 /* ...................................................portfolio */
 .parahraf-conteiner {
