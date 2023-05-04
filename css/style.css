@@ -282,8 +282,9 @@ p {
 
 
 .modal-form-check:checked+.modal-form-check-desc::before {
+     background-image: url("/images/Vector-check-box.svg");
     background-color: var(--thre-background-color);
-    background-image: url("./images/Vector-check-box.svg");
+   
     background-repeat: no-repeat;
     background-size: 10px 8px;
     background-position: 50% 50%;
@@ -292,7 +293,7 @@ p {
 
 .modal-form-check:focus+.modal-form-check-desc::before {
 
-    background-image: url("./images/Vector-check-box.svg");
+    background-image: url("/images/Vector-check-box.svg");
     background-repeat: no-repeat;
     background-size: 10px 8px;
     background-position: 50% 50%;
