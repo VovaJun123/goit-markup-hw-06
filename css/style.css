@@ -294,8 +294,8 @@ p {
 .checkbox {
     position: relative;
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     content: "";
     cursor: pointer;
     margin-right: 8px;
