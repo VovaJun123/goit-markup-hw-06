@@ -322,8 +322,7 @@ p {
 
 .custom-checkbox input:checked~.checkbox {
     background: var(--thre-background-color);
-    border: 2px solid var(--thre-background-color);
-
+   
 }
 
 
